@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="en">
+<!-- <html lang="en">
 <head>
   <meta charset="utf-8">
 
@@ -8,26 +8,26 @@
   <meta name="description" content="Rock Paper Scissors">
   <meta name="author" content="Vera">
 
-  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <-- <link rel="stylesheet" href="styles.css"> -->
 
-</head>
+<!---</head> -->
 <script>
-function computerPlay(){
-    computerSelection = 'paper'
-    return result;
-}
-function playRound(playerSelection, computerSelection){
-    if(computerSelection == 'paper' && playerSelection == 'rock'){
-        result_text = "You Lose! Paper beats Rock"
-    }    
-    return result_text
-}
+    function computerPlay(){
+        var computerSelection = 'paper'
+        return result;
+    }
+    function playRound(playerSelection, computerSelection){
+        if(computerSelection == 'paper' && playerSelection == 'rock'){
+            var result_text = "You Lose! Paper beats Rock"
+        }    
+        return result_text
+    }
 
-const playerSelection = 'rock'
-const computerSelection = computerPlay()
-console.log(playRound(playerSelection, computerSelection))
-}
+    const playerSelection = 'rock'
+    const computerSelection = computerPlay()
+    console.log(playRound(playerSelection, computerSelection))
+    
 </script>
-<body>
+<!-- <body>
 </body>
-</html>
+</html> -->
