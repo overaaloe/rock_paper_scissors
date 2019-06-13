@@ -1,6 +1,6 @@
 <!doctype html>
 
-<!-- <html lang="en">
+<html lang="en">
 <head>
   <meta charset="utf-8">
 
@@ -8,26 +8,69 @@
   <meta name="description" content="Rock Paper Scissors">
   <meta name="author" content="Vera">
 
-  <-- <link rel="stylesheet" href="styles.css"> -->
+  <!--<link rel="stylesheet" href="styles.css"> -->
 
-<!---</head> -->
+</head>
 <script>
-    function computerPlay(){
-        var computerSelection = 'paper'
-        return result;
-    }
-    function playRound(playerSelection, computerSelection){
-        if(computerSelection == 'paper' && playerSelection == 'rock'){
-            var result_text = "You Lose! Paper beats Rock"
-        }    
-        return result_text
+
+    function game() {
+        var computerScore = 0
+        var playerScore = 0
+        
+        function computerPlay(){
+            var computerSelectionList = ['paper','rock','scissors']
+            var computerSelection = computerSelectionList[Math.floor(Math.random() * computerSelectionList.length)];
+            console.log(computerSelection)
+            return computerSelection;
+        }
+
+        function playRound(playerSelection, computerSelection){
+            if(computerSelection.toLowerCase() == 'paper' && playerSelection.toLowerCase() == 'rock'){
+                var result_text = alert("You Lose! Paper beats Rock")
+                computerScore+=1
+            }
+            if(computerSelection.toLowerCase() == 'paper' && playerSelection.toLowerCase() == 'scissors'){
+                var result_text = alert("You Won! Scissors beats Paper")
+                playerScore+=1
+            }
+            if(computerSelection.toLowerCase() == 'paper' && playerSelection.toLowerCase() == 'paper'){
+                var result_text = alert("Draw.")
+            }
+            if(computerSelection.toLowerCase() == 'rock' && playerSelection.toLowerCase() == 'rock'){
+                var result_text = alert("Draw")
+            }
+            if(computerSelection.toLowerCase() == 'rock' && playerSelection.toLowerCase() == 'scissors'){
+                var result_text = alert("You Lose! Rock beats Scissors")
+                computerScore+=1
+            }
+            if(computerSelection.toLowerCase() == 'rock' && playerSelection.toLowerCase() == 'paper'){
+                var result_text = alert("You Won! Paper beats Rock ")
+                playerScore+=1
+            }
+            if(computerSelection.toLowerCase() == 'scissors' && playerSelection.toLowerCase() == 'rock'){
+                var result_text = alert("You Won! Rock beats Scissors")
+                playerScore+=1
+            }
+            if(computerSelection.toLowerCase() == 'scissors' && playerSelection.toLowerCase() == 'scissors'){
+                var result_text = alert("Draw")
+            }
+            if(computerSelection.toLowerCase() == 'scissors' && playerSelection.toLowerCase() == 'paper'){
+                var result_text = alert("You Lose! Scissors beats Paper")
+                computerScore+=1
+            }
+            return result_text
+        }
+
+        for (let index = 0; index < 5; index++) {
+            const playerSelection = prompt("Rock Paper Scissors?");
+            const computerSelection = computerPlay()
+            console.log(playRound(playerSelection, computerSelection)) 
+        }
+        return alert("Computer:" + computerScore + "   "+ "Player:" + playerScore)
     }
 
-    const playerSelection = 'rock'
-    const computerSelection = computerPlay()
-    console.log(playRound(playerSelection, computerSelection))
-    
+    console.log(game())
 </script>
-<!-- <body>
+<body>
 </body>
-</html> -->
+</html>
